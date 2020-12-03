@@ -180,7 +180,10 @@ void setup() {
 
 void loop() {
 
-  displayTemp(99.99);
+
+
+  displayTemp(103);
+>>>>>>> 27e6bc818acf660976e1f7c63359f313239db12f
 
 }
 void displayTemp(float number) {
