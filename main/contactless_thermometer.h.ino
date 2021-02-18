@@ -2,11 +2,12 @@
 #define CONTACTLESS_THERMOMETER_H
 
 #include <Arduino.h>
-#include <SPI.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-#include <SparkFunMLX90614.h> // SparkFunMLX90614 Arduino library
 
+
+boolean checkDistance()
+int sendToDisplay2(int temp)
+int turnOnThermometer()
+const unsigned char myBitmapMaker [] PROGMEM = 
+const unsigned char myBitmapMaker1 [] PROGMEM =
 
 #endif

@@ -1,4 +1,11 @@
-#include contactless_thermometer.h
+#include "contactless_thermometer.h"
+#include <Arduino.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <SparkFunMLX90614.h> // SparkFunMLX90614 Arduino library
+
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 
