@@ -1,5 +1,4 @@
 //main test file for dummy header
-
 void setup() {
     // put setup code here, to run once:
     Serial.begin(9600);
@@ -16,17 +15,4 @@ void loop() {
 
     delay(2000);
     
-}
-
-// For the sake of testing here is a function that literally just gets a random number
-long getRandomNumber() {
-
-  unsigned long specialNumber = random(5, 1000); // gets random number between 5 and 1000
-
-  specialNumber *= PI ; // multiplies by Pi and reassigns
-
-  specialNumber -= 5; // subtracts 5 and reassigns
-
-  return specialNumber;
-  
 }
