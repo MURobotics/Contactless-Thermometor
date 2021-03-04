@@ -18,8 +18,6 @@ float temperature = 0;
 float value = 0;
 float voltage = 0;
 
-
-
 //Thermometer Initialization
 #define echoPin A2
 #define trigPin A1
