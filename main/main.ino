@@ -20,8 +20,8 @@ float voltage = 0;
 
 
 //Thermometer Initialization
-#define echoPin A2
-#define trigPin A1
+int echoPin = A2
+int trigPin = A1
 IRTherm therm; // Create an IRTherm object to interact with throughout
 
 const byte LED_PIN = 8; // Optional LED attached to pin 8 (active low)
@@ -29,7 +29,7 @@ boolean checkDistance();
 boolean check;
 float temp = 0;
 
-boolean checkDistance()
+boolean checkDistance(int trigPin, int echoPin)
 {
   int distance;
   int duration;
@@ -44,11 +44,9 @@ boolean checkDistance()
   duration = pulseIn(echoPin, HIGH);
   // Calculating the distance
   distance = duration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
-  // Displays the distance on the Serial Monitor
-  Serial.print("Distance: ");
-  Serial.print(distance);
-  Serial.println(" cm");
-  if(distance<6){ //Range Finder is cm behind thermometer, so thermometer 2cm from person
+
+  //Range Finder is 1cm behind thermometer, so thermometer 2cm from person
+  if(distance<6){ 
     return true;
   }
   else
@@ -56,11 +54,6 @@ boolean checkDistance()
     return false;
   }
  }
-int sendToDisplay2(int temp)
-{
-  return 1;
-}
-
 
 
 const unsigned char myBitmapMaker [] PROGMEM = {
@@ -235,24 +228,17 @@ void setup() {
   // Alternatively, TEMP_F can be replaced with TEMP_C for Celsius or
   // TEMP_K for Kelvin.
   
- // pinMode(LED_PIN, OUTPUT); // LED pin as output
-  Serial.println("Please place your forehead near the sensor");
-
 }
 
 void loop() {
  Serial.println(temp);
-  check=checkDistance();
+  check=checkDistance(trigPin, echoPin);
   if (check==true)
   {
-    temp=turnOnThermometer();
+    temp=turnOnThermometer(therm);
   }
-  //sendToDisplay2(temp);
    displayTemp(temp);
   delay(3000);
- 
-
-
  
 }
 void displayTemp(float number) {
