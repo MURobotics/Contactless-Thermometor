@@ -2,7 +2,7 @@
 
 //Check Distance Function:
 /* This function checks the distance of the user from the thermometer */
-boolean checkDistance()
+boolean checkDistance(int trigPin, int echoPin)
 {
   int distance;
   int duration;
@@ -32,7 +32,7 @@ boolean checkDistance()
 
  //Temperature Read Function:
  /* This is the function fore reading temperature from the SparkFun Contactless Thermometer*/
-int turnOnThermometer()
+float turnOnThermometer(IRTherm therm)
 {
   
   // Call therm.read() to read object and ambient temperatures from the sensor.
@@ -52,12 +52,13 @@ int turnOnThermometer()
     Serial.println();
   }
   delay(500);
-  return (float)((therm.object()));
+  return (therm.object());
 }
 
 //Display Temperature Function:
 /* This function takes in an input value and prints it out to the OLED Screen */
 void displayTemp(float number) {
+
 
   /**value = analogRead(A0);      // sensor output to arduino analog A0 pin
   voltage = value * 0.00488;

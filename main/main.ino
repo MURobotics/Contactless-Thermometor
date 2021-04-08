@@ -60,19 +60,7 @@ int sendToDisplay2(int temp)
 {
   return 1;
 }
-float turnOnThermometer()
-{
-  
-  // Call therm.read() to read object and ambient temperatures from the sensor.
 
-  
-  if (therm.read()) // On success, read() will return 1, on fail 0.
-  {
-    delay(500);
-    return (therm.object());
-  }
-  
-}
 
 
 const unsigned char myBitmapMaker [] PROGMEM = {

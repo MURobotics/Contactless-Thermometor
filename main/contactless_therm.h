@@ -8,7 +8,7 @@
 #include <SparkFunMLX90614.h>
 
 boolean checkDistance();
-int turnOnThermometer();
+float turnOnThermometer();
 void displayTemp(float number);
 
 
