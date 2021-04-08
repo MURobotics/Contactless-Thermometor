@@ -60,7 +60,7 @@ int sendToDisplay2(int temp)
 {
   return 1;
 }
-int turnOnThermometer()
+float turnOnThermometer()
 {
   
   // Call therm.read() to read object and ambient temperatures from the sensor.
@@ -68,19 +68,10 @@ int turnOnThermometer()
   
   if (therm.read()) // On success, read() will return 1, on fail 0.
   {
-    // Use the object() and ambient() functions to grab the object and ambient
-  // temperatures.
-  // They'll be floats, calculated out to the unit you set with setUnit().
-    Serial.print("Object: " + String(therm.object(), 2));
-    Serial.write('°'); // Degree Symbol
-    Serial.println("F");
-    Serial.print("Ambient: " + String(therm.ambient(), 2));
-    Serial.write('°'); // Degree Symbol
-    Serial.println("F");
-    Serial.println();
+    delay(500);
+    return (therm.object());
   }
-  delay(500);
-  return (float)((therm.object()));
+  
 }
 
 
